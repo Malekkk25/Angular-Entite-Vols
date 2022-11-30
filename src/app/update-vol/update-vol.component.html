@@ -1,0 +1,44 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un Vol :</h2>
+    </div>
+    
+    
+    <form >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        
+            <label >Agence</label>
+            <input type="text" [(ngModel)]="currentVol.agence" name="agence" class="form-control">
+            </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+
+    <label >ID Vol</label>
+    <input type="text" [(ngModel)]="currentVol.numVol"name="idVol" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Depart</label>
+    <input type="datetime-local"[(ngModel)]= "currentVol.heureDepart" name="Depart" class="form-control">
+    </div>
+    
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Destination</label>
+    <input type="text" [(ngModel)]= "currentVol.destination" name="destination" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >etat</label>
+    <input type="string" [(ngModel)]= "currentVol.etat" name="etat" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <select class="form-control form-control-lg" id="idAir" name="idAir"[(ngModel)]="updatedAirId">
+        <option *ngFor="let air of aeroports" [value]="air.idAir" >
+        {{air.nomAir}}
+        </option>
+        </select>
+        </div>
+    
+    <div class="mt-2">
+    <button type="submit" (click)="updateVol()"class="btn btn-success">Modifier</button>
+    </div>
+    </form>
+    
+    </div>
